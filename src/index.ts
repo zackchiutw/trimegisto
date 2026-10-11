@@ -1909,7 +1909,7 @@ let contextPruneImport: Promise<typeof import("./context-prune.ts")> | null = nu
         haltAll();
         try {
           if (ctxRef) {
-            ctxRef.ui.setFooter(undefined);
+            // ponytail: removed setFooter(undefined) — stomps @narumitw/pi-statusline footer (zackchiutw/statusline-footer-fix); trimegisto never sets a footer itself.
             ctxRef.ui.setWidget("trimegisto", undefined);
             ctxRef.ui.setWidget("trimegisto-compact", undefined);
             ctxRef.ui.setStatus("trimegisto", formatTmgStatus(false));
@@ -2135,7 +2135,7 @@ let contextPruneImport: Promise<typeof import("./context-prune.ts")> | null = nu
       updateDashboard();
       ctx.ui.setStatus("trimegisto", formatTmgStatus(true));
     } else {
-      ctx.ui.setFooter(undefined);
+      // ponytail: removed setFooter(undefined) — stomps @narumitw/pi-statusline footer (zackchiutw/statusline-footer-fix); trimegisto never sets a footer itself.
       ctx.ui.setWidget("trimegisto", undefined);
       ctx.ui.setWidget("trimegisto-compact", undefined);
       ctx.ui.setStatus("trimegisto", formatTmgStatus(false));
